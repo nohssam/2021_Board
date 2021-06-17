@@ -29,17 +29,16 @@ input{padding: 5px;}
 		f.action="${pageContext.request.contextPath}/MyController?cmd=list";
 		f.submit();
 	}
-	function write_ok(f) {
-		// 유효성 검사
-		for (var i = 0; i < f.elements.length; i++) {
-			if(f.elements[i].value==""){
-				if(i==3||i==2) continue;
-				alert(f.elements[i].name+"을(를) 입력해주세요");
-				f.elements[i].focus();
-				return;
-			}
-		}
-		f.action="${pageContext.request.contextPath}/MyController?cmd=write_ok";
+	function ans_write(f) {
+		f.action="${pageContext.request.contextPath}/MyController?cmd=ans_write";
+		f.submit();
+	}
+	function update_go(f) {
+		f.action="${pageContext.request.contextPath}/MyController?cmd=update";
+		f.submit();
+	}
+	function delete_go(f) {
+		f.action="${pageContext.request.contextPath}/MyController?cmd=delete";
 		f.submit();
 	}
 </script>
@@ -66,7 +65,17 @@ input{padding: 5px;}
 			</tr>
 			<tr>
 				<th>첨부파일</th>
-				
+				<c:choose>
+					<c:when test="${!empty vo.file_name }">
+						<td style="text-align: center;">
+							<img src="upload/${vo.file_name}" style="width: 100px;"><br>
+							<a href="view/download.jsp?file_name=${vo.file_name}">${vo.file_name }</a>
+						</td>
+					</c:when>
+					<c:otherwise>
+						<td><b>첨부파일없음</b></td>
+					</c:otherwise>
+				</c:choose>
 			</tr>
 			<tr>
 				<td colspan="2">

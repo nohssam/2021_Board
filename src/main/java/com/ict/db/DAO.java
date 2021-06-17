@@ -35,6 +35,7 @@ public class DAO {
 	public static int getInsert(VO vo) {
 		int result = 0 ;
 		result = getSession().insert("insert", vo);
+		ss.commit();
 		return result;
 	}
 	
@@ -42,6 +43,7 @@ public class DAO {
 	public static int getHitUp(String idx) {
 		int result = 0 ;
 		result = getSession().update("hit_up", idx);
+		ss.commit();
 		return result;
 	}
 	// 상세보기
