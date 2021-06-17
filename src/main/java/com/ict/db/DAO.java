@@ -52,6 +52,14 @@ public class DAO {
 		vo = getSession().selectOne("onelist", idx);
 		return vo;
 	}
+	
+	// 원글 삭제
+	public static int getDelete(VO vo) {
+		int result = 0 ;
+		result = getSession().delete("delete", vo);
+		ss.commit();
+		return result;
+	}
 }
 
 

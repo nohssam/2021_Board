@@ -36,6 +36,11 @@
 	<select id="onelist" parameterType="String" resultType="com.ict.db.VO">
 		select * from board where idx = #{idx}
 	</select>
+	
+	<!-- 원글삭제 -->
+	<delete id="delete" parameterType="com.ict.db.VO">
+		delete from board where idx = #{idx}
+	</delete>
 </mapper>
 
 

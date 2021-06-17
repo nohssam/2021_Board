@@ -26,19 +26,19 @@ input{padding: 5px;}
 </style>
 <script type="text/javascript">
 	function list_go(f) {
-		f.action="${pageContext.request.contextPath}/MyController?cmd=list";
+		f.action="${pageContext.request.contextPath}/MyController?cmd=list&cPage=${cPage}";
 		f.submit();
 	}
 	function ans_write(f) {
-		f.action="${pageContext.request.contextPath}/MyController?cmd=ans_write";
+		f.action="${pageContext.request.contextPath}/MyController?cmd=ans_write&cPage=${cPage}";
 		f.submit();
 	}
 	function update_go(f) {
-		f.action="${pageContext.request.contextPath}/MyController?cmd=update";
+		f.action="${pageContext.request.contextPath}/MyController?cmd=update&cPage=${cPage}";
 		f.submit();
 	}
 	function delete_go(f) {
-		f.action="${pageContext.request.contextPath}/MyController?cmd=delete";
+		f.action="${pageContext.request.contextPath}/MyController?cmd=delete&cPage=${cPage}";
 		f.submit();
 	}
 </script>
@@ -83,7 +83,6 @@ input{padding: 5px;}
 				<input type="button" value="답글" onclick="ans_write(this.form)" /> 
 				<input type="button" value="수정" onclick="update_go(this.form)" /> 
 				<input type="button" value="삭제" onclick="delete_go(this.form)" />
-				<input type="hidden" name="cPage" value="${cPage }"> 
 				</td>
 			</tr>
             </tbody>

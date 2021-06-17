@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ict.model.Ans_writeCommand;
 import com.ict.model.Command;
 import com.ict.model.DeleteCommand;
+import com.ict.model.DeleteOKCommand;
 import com.ict.model.ListCommand;
 import com.ict.model.OneListCommand;
 import com.ict.model.UpdateCommand;
@@ -45,6 +46,8 @@ public class MyController extends HttpServlet {
 			comm = new UpdateCommand();
 		}else if(cmd.equalsIgnoreCase("ans_write")) {
 			comm = new Ans_writeCommand();
+		}else if(cmd.equalsIgnoreCase("delete_ok")) {
+			comm = new DeleteOKCommand();
 		}
 		String path = comm.exec(request, response);
         request.getRequestDispatcher(path).forward(request, response);				
