@@ -60,6 +60,22 @@ public class DAO {
 		ss.commit();
 		return result;
 	}
+	
+	// 댓글 삽입전에 lev 를 업데이트 하자 
+	public static int getUp_lev(Map map) {
+		int result = 0 ;
+		result = getSession().update("levup", map);
+		ss.commit();
+		return result;
+	}
+	
+	// 댓글 삽입
+	public static int getAnsInsert(VO ins_vo) {
+		int result = 0 ;
+		result = getSession().insert("ans_ins", ins_vo);
+		ss.commit();
+		return result;
+	}
 }
 
 

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ict.model.Ans_writeCommand;
+import com.ict.model.Ans_writeOKCommand;
 import com.ict.model.Command;
 import com.ict.model.DeleteCommand;
 import com.ict.model.DeleteOKCommand;
@@ -48,6 +49,8 @@ public class MyController extends HttpServlet {
 			comm = new Ans_writeCommand();
 		}else if(cmd.equalsIgnoreCase("delete_ok")) {
 			comm = new DeleteOKCommand();
+		}else if(cmd.equalsIgnoreCase("ans_write_ok")) {
+			comm = new Ans_writeOKCommand();
 		}
 		String path = comm.exec(request, response);
         request.getRequestDispatcher(path).forward(request, response);				
