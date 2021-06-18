@@ -26,7 +26,7 @@ public class ListCommand implements Command{
 		}
 		// 3. 현재 페이지 구하기 
 		String cPage = request.getParameter("cPage");
-		if(cPage==null) cPage = "1";
+		if(cPage=="") cPage = "1";
 		pvo.setNowPage(Integer.parseInt(cPage));
 		
 		// 4. 시작번호, 끝번호 구하기 
