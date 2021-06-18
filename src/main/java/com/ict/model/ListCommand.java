@@ -48,6 +48,7 @@ public class ListCommand implements Command{
 		// 6. reqeust에 저장
 		request.setAttribute("list", list);
 		request.setAttribute("pvo", pvo);
+		request.setAttribute("cPage", cPage);
 		
 		return "view/list.jsp";
 	}

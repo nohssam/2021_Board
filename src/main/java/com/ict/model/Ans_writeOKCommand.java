@@ -21,7 +21,7 @@ public class Ans_writeOKCommand implements Command{
 			
 			String cPage = mr.getParameter("cPage");
 			
-			// 원글과 관련된 step과 lev 업데이트 
+			// 세션에 있는 VO에서  groups, step, lev  추출해서  
 			// 16, 0, 0
 			VO vo = (VO)request.getSession().getAttribute("vo");
 			int groups = Integer.parseInt(vo.getGroups());
